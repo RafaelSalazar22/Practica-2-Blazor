@@ -1,0 +1,31 @@
+﻿@page "/multiplicar"
+
+
+<h3>Tabla de Multiplicar</h3>
+<div>
+    <label>Ingrese el Multiplicador:</label>
+    <input type="number" @bind="Numero">
+    @for (var i = 1; i < 10; i++)
+    {
+
+    }
+</div>
+<div>
+    <h5>
+        La tabla de multiplicar de  @Numero es:
+    </h5>
+
+    @for (var i = 1; i <= 10; i++)
+    {
+        <div>@Numero * @i = @(Numero * i)</div>
+    }
+
+</div>
+
+@code {
+    [Parameter]
+    public int Numero { get; set; }
+
+
+
+}

@@ -1,0 +1,41 @@
+﻿@page "/temperatura"
+
+
+<h2>Estado de la temperatura</h2>
+<div>
+    <label>Ingrese la temperatura:</label>
+    <input type="number" @bind-value="@Numero" />
+    <button @onclick="Calcular"> calcular</button>
+    @if (Resultado != null)
+    {
+        <div>
+            el estado del agua es: @Resultado
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter]
+    public int Numero { get; set; }
+    public string Resultado { get; set; }
+    void Calcular()
+    {
+        if (Numero < 0)
+        {
+            Resultado = "Es Sòlido";
+        }
+        else
+        {
+            if (Numero >= 0 && Numero < 100)
+            {
+                Resultado = "Es liquido";
+            }
+            else
+            {
+                Resultado = "Es gas";
+            }
+
+        }
+    }
+
+}
